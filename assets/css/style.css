@@ -1,0 +1,255 @@
+/* Variables */
+:root {
+    --primary-dark: #1a1a1a;
+    --accent-gold: #d4af37;
+    --accent-hover: #b8962d;
+    --light-bg: #f8f9fa;
+    --white: #e2d3d3;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Page Transition Overlay */
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 26, 26, 0.95);
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s ease;
+}
+
+.page-transition.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Page Fade In Animation */
+body.page-enter {
+    animation: fadeInPage 0.6s ease forwards;
+}
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+h1, h2, h3, .section-title, .navbar-brand {
+    font-family: 'Playfair Display', serif;
+}
+
+.letter-spacing-2 {
+    letter-spacing: 2px;
+}
+
+/* Navbar */
+.navbar {
+    transition: all 0.4s ease;
+    padding: 1.5rem 0;
+    background: transparent;
+}
+
+#page {
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+.navbar-scrolled {
+    background: rgba(0, 0, 0, 0.95) !important;
+    padding: 0.8rem 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.navbar-brand span {
+    color: var(--accent-gold);
+    font-weight: 300;
+}
+
+.nav-link {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--accent-gold) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+}
+
+/* Back Button */
+.btn-outline-light {
+    transition: all 0.3s ease;
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+}
+
+.btn-outline-light:hover {
+    background-color: var(--accent-gold);
+    border-color: var(--accent-gold);
+    color: var(--primary-dark);
+    transform: translateX(-3px);
+}
+
+/* Buttons */
+.btn-gold-action {
+    background-color: var(--accent-gold);
+    color: var(--primary-dark);
+    border: none;
+    transition: 0.3s ease;
+}
+
+.btn-gold-action:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-3px);
+    color: var(--white);
+}
+
+/* Section Title Decorative */
+.section-title {
+    position: relative;
+    padding-bottom: 15px;
+    display: inline-block;
+    font-weight: 700;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--accent-gold);
+}
+
+.text-start.section-title::after {
+    left: 0;
+    transform: none;
+}
+
+/* Gallery */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    transition: 0.6s;
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay h5 {
+    color: white;
+    border: 1px solid white;
+    padding: 10px 20px;
+}
+
+/* Experience Badge */
+.experience-badge {
+    position: absolute;
+    bottom: -25px;
+    right: 10px;
+    background: var(--accent-gold);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    text-align: center;
+    z-index: 2;
+}
+
+.experience-badge .number {
+    font-size: 2rem;
+    font-weight: 700;
+    display: block;
+}
+
+/* Cards & Services */
+.service-card {
+    transition: 0.4s;
+    border-radius: 15px;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: var(--accent-gold);
+}
+
+.price-box .amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Testimonials */
+.testimonial-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.bg-gold {
+    background-color: var(--accent-gold) !important;
+}
+
+.social-icon {
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #d4af37; /* warna gold */
+    transform: translateY(-4px);
+}
