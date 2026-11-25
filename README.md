@@ -46,8 +46,8 @@ Proyek ini dibuat sebagai representasi digital jasa fotografi **Potret Waktu** a
 
 | Kategori | Teknologi |
 | :--- | :--- |
-| **Markup & Styling** | HTML5, CSS3 `[tambahkan jika memakai Bootstrap / Tailwind CSS]` |
-| **Interaktivitas** | JavaScript `[tambahkan jika memakai library animasi/ikon, mis. AOS / Font Awesome]` |
+| **Markup & Styling** | HTML5, CSS3, Bootstrap  |
+| **Interaktivitas** | JavaScript , Font Awesome]` |
 | **Hosting & Deployment** | Vercel |
 
 ---
